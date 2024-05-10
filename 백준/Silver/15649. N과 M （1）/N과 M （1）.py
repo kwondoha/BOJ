@@ -1,13 +1,14 @@
-n,m = list(map(int, input().split()))
+n,m = map(int, input().split())
 arr = []
 
-def bf():
+def bt():
   if len(arr)==m:
     print (*arr)
+    return
   for i in range(1,n+1):
     if i not in arr:
       arr.append(i)
-      bf()
+      bt()
       arr.pop()
 
-bf()
+bt()
